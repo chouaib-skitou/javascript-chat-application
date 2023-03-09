@@ -79,10 +79,11 @@ global.users = [];
 http.listen(process.env.PORT || 3000, function () {
     console.log("Server has been started at: " + (process.env.PORT || 3000));
 
-    // connect with database
-    MongoClient.connect("mongodb://localhost:27017", function (error, client) {
-        if (error) {
-            console.error(error);
+    // Connect to the db
+    MongoClient.connect("mongodb://127.0.0.1:27017", function (err, client) {
+
+        if (err) {
+            console.log('Unable to connect to the mongoDB server. Error:', err);
             return;
         }
 
