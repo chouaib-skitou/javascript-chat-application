@@ -1,38 +1,37 @@
-<template id="app">
+<template>
   <app-header />
-  <router-view />
-  <div style="height: 80vh;"></div>
+    <router-view />
   <app-footer />
 </template>
 
 <script>
-import AppHeader from './components/layouts/AppHeader.vue'
-import AppFooter from './components/layouts/AppFooter.vue'
+import AppHeader from "./components/layouts/AppHeader.vue"
+import AppFooter from "./components/layouts/AppFooter.vue"
 
-import '../public/assets/css/style.css'
-import '../public/assets/css/bootstrap.min.css'
-import '../public/assets/fonts/css/font-awesome.min.css'
-import '../public/assets/js/jquery-3.1.1'
-import '../public/assets/js/app.js'
-import '../public/assets/js/bootstrap.min.js'
+// import "../public/assets/css/bootstrap.min.css"
+import "../public/assets/bootstrap/bootstrap.min.css"
+import "../public/assets/font-awesome/css/font-awesome.min.css"
 
+// import "../public/assets/js/bootstrap.min.js"
+import "../public/assets/bootstrap/bootstrap.min.js"
+
+// include jquery
+window.$ = window.jQuery = require("jquery")
 
 export default {
   name: 'App',
   components: {
     AppHeader,
-    AppFooter
+    AppFooter,
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  margin-top: 0px !important;
+}
+.text-right {
+  text-align: right;
 }
 </style>
