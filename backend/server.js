@@ -15,7 +15,7 @@ http.listen(process.env.PORT || 3000, function () {
     console.log('Server is running on port ' + (process.env.PORT || 3000));
 
     // Connect to the db
-    MongoClient.connect("mongodb://localhost:27017", function (err, client) {
+    MongoClient.connect("mongodb://127.0.0.1:27017", function (err, client) {
 
         if (err) {
             console.log('Unable to connect to the mongoDB server. Error:', err);
