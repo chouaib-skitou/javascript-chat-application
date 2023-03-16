@@ -3,7 +3,7 @@
         <div class="container-fluid">
         
             <router-link class="navbar-brand" to="/">
-                ChatApp
+                Messagerie
             </router-link>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,11 +19,11 @@
                     </li>
 
                     <li class="nav-item" v-if="!login">
-                        <router-link class="nav-link" to="/login">Login</router-link>
+                        <router-link class="nav-link" to="/login">Connexion</router-link>
                     </li>
 
                     <li class="nav-item" v-if="!login">
-                        <router-link class="nav-link" to="/register">Register</router-link>
+                        <router-link class="nav-link" to="/register">Inscription</router-link>
                     </li>
                     <li class="nav-item" v-if="login">
                         <router-link class="nav-link" to="/messagerie">Messagerie</router-link>

@@ -21,7 +21,7 @@
                         <ul class="contacts">
                             <li v-for="contact in contacts" v-bind:key="contact._id" v-bind:class="contact._id == _id ? 'active' : ''">
                                 <div class="d-flex bd-highlight">
-                                    <div class="user_info">
+                                    <div class="informations_utilisateur">
                                         <span v-text="contact.name" style="cursor: pointer;" v-bind:data-id="contact._id" v-bind:data-name="contact.name" v-bind:data-is-archive="contact.isArchive" v-on:click="onChatSelected"></span>
                                         <p v-if="(contact.unreadMessages > 0)" v-text="' (' + contact.unreadMessages + ')'" class="text-danger"></p>
                                     </div>
@@ -33,28 +33,28 @@
                 </div></div>
                 <div class="col-md-8 col-xl-6 chat">
                     <div class="card">
-                        <div class="card-header msg_head">
+                        <div class="card-header message_tete">
                             <div class="d-flex bd-highlight">
-                                <div class="user_info">
-                                    <span>Chat with <span v-text="name"></span></span>
+                                <div class="informations_utilisateur">
+                                    <span>Messages avec <span v-text="name"></span></span>
                                     <p><span v-text="totalMessages" style="font-size: 10px; color: rgba(255,255,255,0.6);"></span> Messages</p>
                                 </div>
                             </div>
 
                             <span id="action_menu_btn" class="more-options" v-on:click="showContactOptions"></span>
                         </div>
-                        <div class="card-body msg_card_body">
+                        <div class="card-body message_body">
 
                             <div v-for="msg in messages" v-bind:key="msg._id">
 
                                 <template v-if="user != null && user.email == msg.sender.email">
                                     <div class="d-flex justify-content-end mb-4">
-                                        <div class="msg_cotainer_send">
-                                            <template class="more-options" v-on:click="showMoreOptions(msg)" v-bind:is-my-message="true">
+                                        <div class="message_box_envoie">
+                                            <template class="more-options" v-bind:is-my-message="true">
                                                 <span v-text="msg.message"></span>
                                             </template>
 
-                                            <p class="msg_time message-data-time" v-text="getMessageTime(msg.createdAt)"></p>
+                                            <p class="message_date message-data-time" v-text="getMessageTime(msg.createdAt)"></p>
                                         </div>
 
                                         <div class="img_cont_msg">
@@ -69,12 +69,12 @@
                                             <img v-bind:src="getPicture(msg.sender)" class="rounded-circle user_img_msg" />
                                         </div>
 
-                                        <div class="msg_cotainer">
-                                            <template class="more-options" v-on:click="showMoreOptions(msg)" v-bind:is-my-message="false">
+                                        <div class="message_box">
+                                            <template class="more-options"  v-bind:is-my-message="false">
                                                 <span v-text="msg.message"></span>
                                             </template>
 
-                                            <p class="msg_time message-data-time" v-text="getMessageTime(msg.createdAt)"></p>
+                                            <p class="message_date message-data-time" v-text="getMessageTime(msg.createdAt)"></p>
                                         </div>
                                     </div>
                                 </template>
@@ -82,7 +82,7 @@
                         </div>
                         <div class="card-footer">
                             <div class="input-group">
-                                <textarea v-model="message" class="form-control type_msg" placeholder="Type your message..."></textarea>
+                                <textarea v-model="message" class="form-control type_msg" placeholder="..."></textarea>
                                 <div class="input-group-append">
                                     <span class="input-group-text send_btn"><i class="fa fa-location-arrow" v-on:click="sendMessage"></i></span>
                                 </div>
@@ -450,15 +450,16 @@
         }
         .card{
             height: 500px;
-            border-radius: 15px !important;
-            background-color: rgba(0,0,0,0.4) !important;
+            border-radius: 5px !important;
+            /* background-color: rgba(0,0,0,0.4) !important; */
+            background-color: #3b5998;
         }
         .contacts_body{
             padding:  0.75rem 0 !important;
             overflow-y: auto;
             white-space: nowrap;
         }
-        .msg_card_body{
+        .message_body{
             overflow-y: auto;
         }
         .card-header{
@@ -561,16 +562,16 @@
     .offline{
         background-color: #c23616 !important;
     }
-    .user_info{
+    .informations_utilisateur{
         margin-top: auto;
         margin-bottom: auto;
         margin-left: 15px;
     }
-    .user_info span{
+    .informations_utilisateur span{
         font-size: 20px;
         color: white;
     }
-    .user_info p{
+    .informations_utilisateur p{
     font-size: 10px;
     color: rgba(255,255,255,0.6);
     }
@@ -584,25 +585,25 @@
         cursor: pointer;
         margin-right: 20px;
     }
-    .msg_cotainer{
+    .message_box{
         margin-top: auto;
         margin-bottom: auto;
         margin-left: 10px;
         border-radius: 25px;
-        background-color: #82ccdd;
+        background-color: rgb(79, 252, 79);
         padding: 10px;
         position: relative;
     }
-    .msg_cotainer_send{
+    .message_box_envoie{
         margin-top: auto;
         margin-bottom: auto;
         margin-right: 10px;
         border-radius: 25px;
-        background-color: #78e08f;
+        background-color: rgb(83, 222, 206);
         padding: 10px;
         position: relative;
     }
-    .msg_time{
+    .message_date{
         /*position: absolute;
         left: 0;
         bottom: -15px;
@@ -611,14 +612,14 @@
         margin-bottom: 0px;
         margin-top: 10px;
     }
-    .msg_time_send{
+    .message_date_envoie{
         position: absolute;
         right:0;
         bottom: -15px;
         color: rgba(255,255,255,0.5);
         font-size: 10px;
     }
-    .msg_head{
+    .message_tete{
         position: relative;
     }
     #action_menu_btn{
