@@ -25,6 +25,9 @@
                     <li class="nav-item" v-if="!login">
                         <router-link class="nav-link" to="/register">Register</router-link>
                     </li>
+                    <li class="nav-item" v-if="login">
+                        <router-link class="nav-link" to="/messagerie">Messagerie</router-link>
+                    </li>
 
                     <li class="nav-item dropdown" v-if="login">
                         <a v-text="user.name" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
