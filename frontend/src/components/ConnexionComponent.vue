@@ -2,7 +2,7 @@
     <div class="container" style="margin-top: 50px;height: 80vh;">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h1>Login</h1>
+                <h1>Connexion</h1>
             </div>
         </div>
 
@@ -10,14 +10,14 @@
             <div class="offset-md-3 col-md-6">
                 <form method="POST" v-on:submit.prevent="doLogin">
                     <div class="form-group">
-                        <label>Enter email</label>
+                        <label>Email</label>
                         <input type="email" class="form-control" name="email" required />
                     </div>
 
                     <br />
 
                     <div class="form-group">
-                        <label>Enter password</label>
+                        <label>Mot de pass</label>
                         <input type="password" class="form-control" name="password" required />
                     </div>
 
