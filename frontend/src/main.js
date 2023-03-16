@@ -4,17 +4,16 @@ import App from './App.vue'
 // import the vue router necessary functions
 import { createRouter, createWebHistory } from 'vue-router'
 
-import RegisterComponent from "./components/RegisterComponent.vue"
-import LoginComponent from "./components/LoginComponent.vue"
-
+import InscriptionComponent from "./components/InscriptionComponent.vue"
+import ConnexionComponent from "./components/ConnexionComponent.vue"
+import MessagesComponent from "./components/MessagesComponent.vue"
 import HomeComponent from "./components/HomeComponent.vue"
-import AddContactComponent from "./components/AddContactComponent.vue"
-import ChatComponent from "./components/ChatComponent.vue"
+import AjouterContactComponent from "./components/AjouterContactComponent.vue"
+import MessagerieComponent from "./components/MessagerieComponent.vue"
 
 import NotificationsComponent from "./components/NotificationsComponent.vue"
 
 import ProfileComponent from "./components/ProfileComponent.vue"
-import PremiumVersionComponent from "./components/PremiumVersionComponent.vue"
 
 // Define some routes
 // Each route should map to a component.
@@ -22,15 +21,15 @@ const routes = [
     { path: "/profile", component: ProfileComponent },
 
     { path: '/', component: HomeComponent },
-    { path: "/contacts/add", component: AddContactComponent },
+    { path: '/messagerie', component: MessagesComponent },
+    { path: "/contacts/add", component: AjouterContactComponent },
 
-    { path: "/chat/:email", component: ChatComponent },
+    { path: "/chat/:email", component: MessagerieComponent },
 
-    { path: '/register', component: RegisterComponent },
-    { path: '/login', component: LoginComponent },
+    { path: '/register', component: InscriptionComponent },
+    { path: '/login', component: ConnexionComponent },
 
-    { path: "/notifications", component: NotificationsComponent },
-    { path: "/premiumVersion", component: PremiumVersionComponent }
+    { path: "/notifications", component: NotificationsComponent }
 ];
 
 // Create the router instance and pass the `routes` option

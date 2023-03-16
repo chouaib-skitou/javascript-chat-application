@@ -1,4 +1,4 @@
-<template>
+<template style="position: relative;">
   <app-header />
     <router-view />
   <app-footer />
