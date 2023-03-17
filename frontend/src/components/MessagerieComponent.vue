@@ -111,9 +111,7 @@
 
 <script>
 
-	import "../../public/assets/css/chat.css"
-	import "../../public/assets/emoji/emojis.css"
-	import "../../public/assets/emoji/DisMojiPicker.js"
+	import "../../public/assets/css/messagerie.css"
 	
 	import axios from "axios"
 	import swal from "sweetalert2"
@@ -463,22 +461,7 @@
 			this.getData()
 			this.initializeEmoji()
 
-			/*document.addEventListener("click", function () {
-				self.hideMoreOptions()
-			})
-
-       		document.oncontextmenu = function () {
-       			event.preventDefault()
-
-	            if (document.getElementById("contextMenu").style.display == "block"){ 
-	                hideMenu(); 
-	            }else{ 
-	                var menu = document.getElementById("contextMenu")      
-	                menu.style.display = 'block'; 
-	                menu.style.left = event.pageX + "px"; 
-	                menu.style.top = event.pageY + "px"; 
-	            }
-       		}*/
+		
 		},
 
 		watch: {
