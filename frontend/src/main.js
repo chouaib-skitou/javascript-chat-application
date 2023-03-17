@@ -44,7 +44,7 @@ const router = createRouter({
 const app = createApp(App)
 app.use(router)
 
-document.title = "ChatApp"
+document.title = "Application de messagerie"
 
 app.config.globalProperties.$mainURL = "http://localhost:8080"
 app.config.globalProperties.$apiURL = "http://localhost:3000"
