@@ -1,18 +1,18 @@
 # ChatApp
 
-Les etapes pour lancer le projet
+#Les etapes pour lancer le projet
 
-Download and Install Node JS and Mongo DB
+#Download and Install Node JS and Mongo DB
 
-Lancer MongoDB Server 
+#Lancer MongoDB Server 
 
-Ouvrir le dossier backend puis un terminal pour lancer les commandes suivantes :
+#Ouvrir le dossier backend puis un terminal pour lancer les commandes suivantes :
 
-npm update
-npm install -g nodemon
-nodemon server.js
+#npm update
+#npm install -g nodemon
+#nodemon server.js
 
-Ouvrir le dossier frontend puis un terminal pour lancer les commandes suivantes :
+#Ouvrir le dossier frontend puis un terminal pour lancer les commandes suivantes :
 
-npm update
-npm run serve
+#npm update
+#npm run serve
